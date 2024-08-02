@@ -29,15 +29,15 @@ public class WorkflowExecuteTests
     }
 
     [Fact]
-    public async Task ExecuteAsync_ShouldExecuteHandlerSuccessfully()
+    public async Task ExecuteAsync_ShouldExecuteStepSuccessfully()
     {
         // Arrange
         var context = new WorkflowContext() { WorkflowName = "test" };
-        var handlerMock = new Mock<TestStep>(_loggerFactory, _optionsFactoryMock.Object) { CallBase = true };
+        var stepMock = new Mock<TestStep>(_loggerFactory, _optionsFactoryMock.Object) { CallBase = true };
         var config = new WorkflowConfiguration { StartStepType = typeof(TestStep) };
 
         _optionsFactoryMock.Setup(x => x.Create(It.IsAny<string>())).Returns(config);
-        _serviceProviderMock.Setup(x => x.GetService(typeof(TestStep))).Returns(handlerMock.Object);
+        _serviceProviderMock.Setup(x => x.GetService(typeof(TestStep))).Returns(stepMock.Object);
 
         var workflowExecutor = new WorkflowExecutor(_logger, _optionsFactoryMock.Object, _serviceProviderMock.Object);
 
@@ -46,12 +46,12 @@ public class WorkflowExecuteTests
         var result = await workflowExecutor.ExecuteAsync("test", context);
 
         // Assert
-        handlerMock.Verify(x => x.ThenAsync(It.IsAny<WorkflowContext>()), Times.Once);
+        stepMock.Verify(x => x.ThenAsync(It.IsAny<WorkflowContext>()), Times.Once);
         Assert.Equal("Then executed", result);
     }
 
     [Fact]
-    public async Task ExecuteAsync_ShouldReturnError_WhenHandlerNotRegistered()
+    public async Task ExecuteAsync_ShouldReturnError_WhenStepNotRegistered()
     {
         // Arrange
         var context = new WorkflowContext { WorkflowName = "test" };
