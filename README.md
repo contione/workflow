@@ -1,6 +1,6 @@
-﻿# Workflow Workflow
+﻿# Workflow
 
-This repository contains a Workflow Workflow implementation that allows users to configure, execute, and visualize workflows. The Workflow is designed to be modular and flexible, providing a fluent API for defining workflows, handling different execution branches, and logging the execution flow.
+This repository contains a Workflow implementation that allows users to configure, execute, and visualize workflows. The Workflow is designed to be modular and flexible, providing a fluent API for defining workflows, handling different execution branches, and logging the execution flow.
 
 ## Features
 
