@@ -47,9 +47,9 @@ builder.Services.AddWorkflow("Example", configure =>
 {
     configure
         .StartWith<Step1>()
-        .AddStep<Step1>().Then<Step2>()
-        .AddStep<Step2>().Then<Step3>()
-        .AddStep<Step3>().Then<Step4>().Otherwise<Step5>();
+        .Step<Step1>().Then<Step2>()
+        .Step<Step2>().Then<Step3>()
+        .Step<Step3>().Then<Step4>().Otherwise<Step5>();
 });
 
 ```
@@ -70,9 +70,9 @@ var serviceProvider = new ServiceCollection()
     {
         configure
             .StartWith<Step1>()
-            .AddStep<Step1>().Then<Step2>()
-            .AddStep<Step2>().Then<Step3>()
-            .AddStep<Step3>().Then<Step4>().Otherwise<Step5>();
+            .Step<Step1>().Then<Step2>()
+            .Step<Step2>().Then<Step3>()
+            .Step<Step3>().Then<Step4>().Otherwise<Step5>();
     })
     .BuildServiceProvider();
 
@@ -132,9 +132,9 @@ using Workflow;
 
 var workflowConfiguration = new WorkflowConfigurationBuilder()
     .StartWith<Step1>()
-    .AddStep<Step1>().Then<Step2>()
-    .AddStep<Step2>().Then<Step3>()
-    .AddStep<Step3>().Then<Step4>().Otherwise<Step5>()
+    .Step<Step1>().Then<Step2>()
+    .Step<Step2>().Then<Step3>()
+    .Step<Step3>().Then<Step4>().Otherwise<Step5>()
     .Build();
 
 ConfigurationVisualizer.GenerateDotFile(workflowConfiguration, "workflow.dot");
