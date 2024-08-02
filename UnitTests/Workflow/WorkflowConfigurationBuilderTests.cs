@@ -21,7 +21,7 @@ public class WorkflowConfigurationBuilderTests
     }
 
     [Fact]
-    public void AddStep_ShouldAddHandlerConfiguration()
+    public void AddStep_ShouldAddStepConfiguration()
     {
         // Arrange
         var builder = new WorkflowConfigurationBuilder();
