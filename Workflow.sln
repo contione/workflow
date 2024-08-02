@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow", "Workflow\Workflow.csproj", "{E0B88886-2A50-45A8-A9DD-3CF8D3491966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{6C145B8A-3AF9-4E7F-87E1-4395114DA9C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AB5CD2D8-1944-4855-9AF1-0AB5A0C92150}"
+	ProjectSection(SolutionItems) = preProject
+		generateReport.ps1 = generateReport.ps1
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0B88886-2A50-45A8-A9DD-3CF8D3491966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B88886-2A50-45A8-A9DD-3CF8D3491966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B88886-2A50-45A8-A9DD-3CF8D3491966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B88886-2A50-45A8-A9DD-3CF8D3491966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C145B8A-3AF9-4E7F-87E1-4395114DA9C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C145B8A-3AF9-4E7F-87E1-4395114DA9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C145B8A-3AF9-4E7F-87E1-4395114DA9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C145B8A-3AF9-4E7F-87E1-4395114DA9C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EACC640-555A-4380-AEDD-C2AD03F1E39E}
+	EndGlobalSection
+EndGlobal
