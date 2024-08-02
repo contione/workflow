@@ -103,10 +103,21 @@ public class Step1 : BaseWorkflowStep
 
     public override string Name => "Step1";
 
-    public override async Task ExecuteAsync(WorkflowContext context)
+    public override ValueTask<bool> IfAsync(WorkflowContext context)
     {
-        // Your execution logic here
-        await base.ExecuteAsync(context);
+        return new ValueTask<bool>(ShouldExecute);
+    }
+
+    public override Task ThenAsync(WorkflowContext context)
+    {
+        context.Response = "Then executed";
+        return Task.CompletedTask;
+    }
+
+    public override Task OtherwiseAsync(WorkflowContext context)
+    {
+        context.Response = "Otherwise executed";
+        return Task.CompletedTask;
     }
 }
 ```
